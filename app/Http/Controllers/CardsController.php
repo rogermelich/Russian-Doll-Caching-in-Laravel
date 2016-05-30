@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Card;
+use Cache;
 
 class CardsController extends Controller
 {
@@ -10,7 +11,7 @@ class CardsController extends Controller
     {
 //        $cards = Card::all();
         $cards = Cache::rememberForever('cards',function(){
-            return Card::witch('notes')->get();
+            return Card::with('notes')->get();
         });
 //        $cards = Card::with('notes')->get();
 
