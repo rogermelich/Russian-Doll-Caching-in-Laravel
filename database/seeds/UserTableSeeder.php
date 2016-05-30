@@ -11,6 +11,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Note::class, 100)->create();
     }
 }
